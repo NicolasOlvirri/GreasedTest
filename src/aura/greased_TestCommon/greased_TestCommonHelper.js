@@ -8,5 +8,9 @@
         base.loadDriver();
         // LockerService hoops have been jumped through, return the driver to the test that wants it
         return base.get("v.driver");
+    },
+    toggleAssertions: function(component, event, helper) {
+        var base = component.get("v.baseComponent");
+        base.toggleAssertions();
     }
 })

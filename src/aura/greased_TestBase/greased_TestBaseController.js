@@ -14,5 +14,8 @@
     },
     loadDriver: function(component, event, helper) {
         component.set("v.driver", helper.driver(component, event, helper));
+    },
+    toggleAssertions: function(component, event, helper) {
+        helper.handleToggle(component);
     }
 })

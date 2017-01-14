@@ -33,6 +33,9 @@
     <aura:method name="loadDriver" access="public"
                  description="Loads the driver object into v.driver, ready for external access"/>
 
+    <aura:method name="toggleAssertions" access="public"
+                 description="hides/shows the assertions"/>
+
     <c:greased_TestStatus status="{!v.status}" count="{!v.count}"/>
 
     <hr/>

@@ -80,6 +80,16 @@
                         });
                     });
             },
+            sleep: function (ms) {
+                return $A.getCallback(
+                    function (v) {
+                        return new Promise(function (resolve, reject) {
+                            setTimeout(function () {
+                                resolve(v);
+                            }, ms)
+                        });
+                    });
+            },
             whenDone: function (handler) {
                 return $A.getCallback(
                     function (v) {

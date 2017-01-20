@@ -55,8 +55,17 @@
 
             ////////// #4 REJECTED ////////////
 
+            .then(test.wait(function (context) {
+                console.log("Going to sleep");
+            }))
+            // if you want to slow down your test and see it execute, use test.sleep
+            .then(test.sleep(1000))
+            .then(test.wait(function (context) {
+                console.log("Woke up again");
+            }))
+
             .then(test.focus(loginRejected, 'The 4th login form will have both fields populated so should allow login attempts'))
-            .then(test.setAttributes({"v.password":"labrynth"})) // another abbreviated way to set attributes. this supports N attributes in one call
+            .then(test.setAttributes({"v.password": "labrynth"})) // another abbreviated way to set attributes. this supports N attributes in one call
             .then(test.wait(function (context) {
                 loginRejected.set("v.password", "labrynth");
                 // using usedByAll is a closure i.e. this anonymous fn is able to access (close over) the variables from above

@@ -66,6 +66,7 @@ When Apex calls are made, you need to invoke using a function which takes a call
 * Jan 21, 2017 
     * added javascript assertions
     * run all tests at once
+    * fireApplicationEvent and fireComponentEvent helper fns
 
 ## Supported Browsers
 

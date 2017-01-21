@@ -81,6 +81,10 @@
             .then(test.assertEquals(false, "v.disabled",
                 "Login button is still enabled after a failed login attempt"))
 
+            // this is an inherited helper fn for firing events. There's also fireComponentEvent with the same args.
+            // you can see this event firing (but unhandled) using the Lighting Inspector Chrome extension.
+            .then(helper.fireApplicationEvent("e.force:navigateToURL", {url: "Foo"}))
+
             //////////// END OF TESTS ////////////
 
             // always include these fns to handle the end of the test

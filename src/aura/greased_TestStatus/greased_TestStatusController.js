@@ -1,7 +1,7 @@
 ({
     deriveStyles: function (component, event, helper) {
         var lookup = {
-            "RUNNING": "slds-theme--success",
+            "RUNNING": "",
             "PASSED": "slds-theme--success",
             "FAILED": "slds-theme--error",
         };
@@ -15,7 +15,7 @@
         var icon = icons[component.get("v.status")];
         component.set("v.icon", $A.util.isEmpty(icon) ? "" : icon);
     },
-    toggleAssertions: function(component, event, helper) {
+    toggleAssertions: function (component, event, helper) {
         var toggle = component.getEvent("toggleDisplay");
         toggle.fire();
     }

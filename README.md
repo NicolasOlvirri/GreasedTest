@@ -46,6 +46,14 @@ The best way to learn how to use the tool is to [look at the sample app test](ht
 and [the example assertions test](https://github.com/stevebuik/greased/blob/master/src/aura/greased_ExampleTests/greased_ExampleTestsController.js)
 The comments there should be clear but please log an issue if something is not clear and I'll fix it.
 
+### Using the *Run All* button
+
+The first time you click the button, your browser may block the tabs from opening because of the popup-blocker. 
+If you only only one tab open, find the popup-blocker and disable it for this url. 
+
+You can click the *Run All* button at any time, even if all the tests are already open. 
+Doing so will cause them all to run again. This makes it simple to re-run all tests any time you want to check your changes.
+
 ## Design requirements
 
 Testing always seems to encourage good design and the same happens with Greased. Public attributes are part of a components API and they are primarily how you drive and assert about the state of components.

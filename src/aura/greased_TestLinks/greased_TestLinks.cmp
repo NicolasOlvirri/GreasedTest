@@ -5,7 +5,7 @@
     <lightning:layout horizontalAlign="space">
         <aura:iteration items="{!v.links}" var="link">
             <lightning:layoutItem flexibility="auto" padding="around-small">
-                <a href="{!link}">Test: {!link}</a>
+                <a href="{!link}">{!link}</a>
             </lightning:layoutItem>
         </aura:iteration>
     </lightning:layout>

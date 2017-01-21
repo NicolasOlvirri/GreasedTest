@@ -252,9 +252,6 @@
         );
     },
     newAssertion: function (type, params, callback) {
-        if ($A.util.isUndefinedOrNull(params.value)) {
-            throw Error("value must be loaded for assertions");
-        }
         $A.createComponent(type, params,
             function (newAssertion, status, errorMessage) {
                 if (status === "SUCCESS") {

@@ -43,7 +43,7 @@ then change your browser uri to:
 * /c/greased_TestStatusTests.app : tests for the components that make up the tool
 
 The best way to learn how to use the tool is to [look at the sample app test](https://github.com/stevebuik/greased/blob/master/src/aura/greased_LoginFormTests/greased_LoginFormTestsController.js)
-and [look at the example assertions test](https://github.com/stevebuik/greased/blob/master/src/aura/greased_ExampleTests/greased_ExampleTestsController.js)
+and [the example assertions test](https://github.com/stevebuik/greased/blob/master/src/aura/greased_ExampleTests/greased_ExampleTestsController.js)
 The comments there should be clear but please log an issue if something is not clear and I'll fix it.
 
 ## Design requirements
@@ -58,7 +58,14 @@ When Apex calls are made, you need to invoke using a function which takes a call
 
 ## Change Log
 
-Jan 11, 2017: added test.setAttribute and test.setAttributes to reduce boilerplate in tests 
+* Jan 11, 2017
+    * added test.setAttribute
+    * test.setAttributes to reduce boilerplate in tests
+* Jan 20, 2017
+    * added test.sleep
+* Jan 21, 2017 
+    * added javascript assertions
+    * run all tests at once
 
 ## Supported Browsers
 

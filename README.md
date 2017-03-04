@@ -75,6 +75,9 @@ When Apex calls are made, you need to invoke using a function which takes a call
     * added javascript assertions
     * run all tests at once
     * fireApplicationEvent and fireComponentEvent helper fns
+* Mar 4th, 2017
+    * cleaned up performance warnings
+    * added helper.componentValue to reduce need for focus changes in tests
 
 ## Supported Browsers
 

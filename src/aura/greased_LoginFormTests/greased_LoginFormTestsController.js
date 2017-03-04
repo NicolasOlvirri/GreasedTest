@@ -81,6 +81,11 @@
             .then(test.assertEquals(false, "v.disabled",
                 "Login button is still enabled after a failed login attempt"))
 
+            // helper.componentValue allows you to assert an expression for any component, i.e. doesn't need
+            // focus on a component to evaluate expressions
+            .then(test.assertEquals(true, helper.componentValue(disabled, "v.disabled"),
+                "disabled form is still unaffected by other tests and assertions"))
+
             // this is an inherited helper fn for firing events. There's also fireComponentEvent with the same args.
             // you can see this event firing (but unhandled) using the Lighting Inspector Chrome extension.
             .then(helper.fireApplicationEvent("e.force:navigateToURL", {url: "Foo"}))

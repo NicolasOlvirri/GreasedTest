@@ -36,5 +36,11 @@
             // return is required to pass context through the promise chain
             return context;
         }
+    },
+    componentValue: function (component, expression) {
+        return function (context) {
+            return component.get(expression);
+        }
     }
+
 })

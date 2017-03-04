@@ -61,16 +61,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="slds-tile slds-media slds-card__tile slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-3 slds-hint-parent">
-                    <div class="slds-media__body">
-                        <aura:if isTrue="{!not(v.result)}">
+                <div class="{!v.result?'slds-show':'slds-hide'}">
+                    <div class="slds-tile slds-media slds-card__tile slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-3 slds-hint-parent">
+                        <div class="slds-media__body">
                             <div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
-                                <h3 class="slds-truncate">Problem</h3>
+                                <h3>Problem</h3>
                             </div>
                             <div class="slds-tile__detail slds-text-body--small">
                                     {!v.problem}
                             </div>
-                        </aura:if>
+                        </div>
                     </div>
                 </div>
             </div>

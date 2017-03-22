@@ -1,0 +1,52 @@
+<project name="Retrieve and Deploy Salesforce metadata" default="deployFromGit" basedir=".."
+         xmlns:sf="antlib:com.salesforce">
+
+    <taskdef uri="antlib:com.salesforce" resource="com/salesforce/antlib.xml"
+             classpath="${basedir}/CI/ant-salesforce.jar"/>
+    <property file="${basedir}/CI/build.properties"/>
+    <property environment="env"/>
+
+    <!-- UTILITY TARGETS -->
+    <target name="echoEnvValues">
+        <echo message="User=${sfdc.username}"/>
+        <echo message="Env=${sfdc.serverurl}"/>
+        <echo message="ANT_HOME=${ant.home}"/>
+        <echo message="BASEDIR=${basedir}"/>
+        <echo message="ANT_CORE_LIB=${ant.core.lib}"/>
+        <echo message="JAVA_VERSION=${ant.java.version}"/>
+        <echo message="ANT_LIBRARY_DIR=${ant.library.dir}"/>
+        <echo message="classpath=${java.class.path}"/>
+        <echo message="proxyhost=${proxy.host}"/>
+        <echo message="proxyport=${proxy.port}"/>
+        <echo message="sfdc.checkOnly=${sfdc.checkOnly}"/>
+    </target>
+
+    <target name="list_src">
+        <echo message="List contents of src directory:"/>
+        <fileset id="dist.contents" dir="${basedir}/src" includes="**/**.*"/>
+        <property name="prop.dist.contents" refid="dist.contents"/>
+        <echo>${prop.dist.contents}</echo>
+    </target>
+
+    <target name="deployFromGit"
+            depends="echoEnvValues, list_src, deploy1"/>
+
+    <target name="deploy1">
+        <echo level="info">Deploy ${env.sfdc.username} to ${env.sfdc.serverurl}</echo>
+        <sf:deploy username="${env.sfdc.username}"
+                   password="${env.sfdc.serverurl}"
+                   serverurl="${env.sfdc.password}"
+                   deployRoot="${basedir}/src"
+                   pollWaitMillis="${sfdc.pollWaitMillis}"
+                   checkOnly="${sfdc.checkOnly}"
+                   maxPoll="${sfdc.maxPoll}"
+                   logType="Debugonly"
+                   rollbackOnError="true"
+                   testLevel="RunSpecifiedTests"
+                   trace="false">
+            <runTest>greased_TestLoaderTest</runTest>
+            <runTest>LoginFormServiceTest</runTest>
+        </sf:deploy>
+    </target>
+
+</project>

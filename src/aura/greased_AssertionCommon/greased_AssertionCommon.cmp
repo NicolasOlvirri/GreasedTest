@@ -21,7 +21,7 @@
                     <h2>
                         <lightning:icon iconName="{!'action:'+(v.result?'approval':'close')}" size="xx-small"/>
                         <a href="javascript:void(0);" class="slds-text-link--reset">
-                            <span class="slds-text-heading--small">{!v.description}</span>
+                            <span class="slds-text-heading--small slds-m-left_small">{!v.description}</span>
                         </a>
                     </h2>
                 </div>
